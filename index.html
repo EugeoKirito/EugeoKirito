@@ -2,14 +2,84 @@
 <html>
 <head>
 
-<meta charset="utf-8">
-<title>Home</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CLANNAD</title>
+    <!-- Import Bootstrap stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Hide the music player */
+        #backgroundMusic {
+            display: none;
+        }
+
+        /* Basic responsive styles */
+        body {
+            font-family: 'Lobster', cursive;
+            font-size: 16px; /* Adjust as needed */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+        }
+
+        .container-fluid {
+            padding: 0; /* Remove default container padding */
+        }
+
+        .jumbotron {
+            background-color: #f8f9fa; /* Example background color, adjust as needed */
+            padding: 20px; /* Example padding, adjust as needed */
+            margin: 0; /* Remove default margin */
+        }
+
+        #ALL {
+            width: 100%; /* Make the image fill its container */
+            height: auto; /* Maintain the aspect ratio */
+            display: block; /* Remove any inline spacing issues */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Introduction to CLANNAD</h1>
+        <p class="lead">CLANNAD is a visual novel created by Key and an animated series based on the novel. The story primarily revolves around the growth of the protagonist, Tomoya Okazaki, and his interpersonal relationships with other characters.</p>
+        <hr class="my-4">
+        <p>CLANNAD is renowned for its profound storytelling, beautiful music, and captivating characters. The work encompasses multiple plotlines, exploring themes such as family, friendship, and love.</p>
+        <p class="lead">
+            <!-- Modify the button text to "Play Music" and add an id for JavaScript manipulation -->
+            <button id="playMusicBtn" class="btn btn-primary btn-lg" onclick="playMusic()">Play Music</button>
+            <a href="https://blog.clannad.cn" target="_blank" class="btn btn-info btn-lg ml-2">Visit My Blog</a>
+        </p>
+    </div>
+</div>
+
+<!-- Music player -->
+<audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="js/cl.mp3" id="backgroundMusic"></audio>
+
+<!-- Import Bootstrap JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript function for playing/pausing music
+    function playMusic() {
+        var audio = document.getElementById('backgroundMusic');
+        if (audio.paused) {
+            audio.play();
+            document.getElementById('playMusicBtn').innerText = 'Pause Music';
+        } else {
+            audio.pause();
+            document.getElementById('playMusicBtn').innerText = 'Play Music';
+        }
+    }
+</script>
 
 <!-- Behavioral Meta Data -->
 <meta name="Christmas-Landing-Page" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<audio autoplay="autoplay" controls="controls" loop="loop" preload="auto"src="js/cl.mp3"></audio>
 
 <!-- Styles -->
 <style>
